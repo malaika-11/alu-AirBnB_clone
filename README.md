@@ -85,4 +85,4 @@ $ echo "all" | ./console.py
 
 ## Author
 
-Ishimwe Axcel - [i.axcel@alustudent.com](mailto:i.axcel@alustudent.com)
+Isingizwe Elohim Malaika - [m.isingizwe2@alustudent.com](mailto:m.isingizwe2@alustudent.com)
