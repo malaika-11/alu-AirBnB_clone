@@ -1,7 +1,5 @@
-
 #!/usr/bin/python3
 """This module defines the BaseModel class."""
-
 from datetime import datetime
 from uuid import uuid4
 
@@ -15,17 +13,13 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key == "__class__":
                     continue
-
                 if key in ("created_at", "updated_at"):
-                    if isinstance(value, str):
-                        value = datetime.fromisoformat(value)
-
+                    value = datetime.fromisoformat(value)
                 setattr(self, key, value)
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
-
             from models import storage
             storage.new(self)
 
@@ -38,7 +32,6 @@ class BaseModel:
     def save(self):
         """Update updated_at and persist to storage."""
         self.updated_at = datetime.now()
-
         from models import storage
         storage.save()
 
